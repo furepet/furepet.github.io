@@ -752,8 +752,8 @@
     <p>FurēPET is the all-in-one app that stores vet records, tracks medications, logs weight trends, and keeps your pet's entire health history at your fingertips — so you're always prepared.</p>
 
     <div class="hero-cta-group" id="waitlist">
-      <form class="waitlist-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You\'re on the list! 🐾'; this.querySelector('input').disabled=true; this.querySelector('button').disabled=true;">
-        <input type="email" placeholder="Enter your email" required>
+      <form class="waitlist-form" onsubmit="event.preventDefault(); var f=this; var email=f.querySelector('input').value; fetch('https://app.kit.com/forms/9217067/subscriptions', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:'email_address='+encodeURIComponent(email)}).then(function(){f.querySelector('button').textContent='You\'re on the list! 🐾'; f.querySelector('input').disabled=true; f.querySelector('button').disabled=true;}).catch(function(){f.querySelector('button').textContent='You\'re on the list! 🐾'; f.querySelector('input').disabled=true; f.querySelector('button').disabled=true;});">
+        <input type="email" name="email_address" placeholder="Enter your email" required>
         <button type="submit">Join the Waitlist</button>
       </form>
       <span class="hero-subtext">Free to download. No spam, ever. Just wellness + cute animals.</span>
@@ -875,8 +875,8 @@
 <section class="final-cta fade-up">
   <h2>Be the first to get FurēPET.</h2>
   <p>Join thousands of pet parents getting ready for a better way to manage their pet's health.</p>
-  <form class="waitlist-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You\'re on the list! 🐾'; this.querySelector('input').disabled=true; this.querySelector('button').disabled=true;">
-    <input type="email" placeholder="Enter your email" required>
+  <form class="waitlist-form" onsubmit="event.preventDefault(); var f=this; var email=f.querySelector('input').value; fetch('https://app.kit.com/forms/9217067/subscriptions', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:'email_address='+encodeURIComponent(email)}).then(function(){f.querySelector('button').textContent='You\'re on the list! 🐾'; f.querySelector('input').disabled=true; f.querySelector('button').disabled=true;}).catch(function(){f.querySelector('button').textContent='You\'re on the list! 🐾'; f.querySelector('input').disabled=true; f.querySelector('button').disabled=true;});">
+    <input type="email" name="email_address" placeholder="Enter your email" required>
     <button type="submit">Join the Waitlist</button>
   </form>
   <div class="app-store-badge">
